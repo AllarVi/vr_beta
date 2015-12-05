@@ -10,7 +10,7 @@ include "config.php";
 include "id_card_utils.php";
 
 $requestUrl = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$baseUrl = url();
+//$baseUrl = url();
 echo $baseUrl;
 $requestString = substr($requestUrl, strlen($baseUrl));
 

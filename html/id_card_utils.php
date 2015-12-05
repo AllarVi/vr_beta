@@ -55,12 +55,12 @@ function certstr2utf8($str)
 
 //  Actual script to run
 
-$user = get_user();
-if (!$user) echo("Authentication failed.");
-else {
-    echo "Last name: " . $user[0] . "<br>";
-    echo "First name: " . $user[1] . "<br>";
-    echo "Person code: " . $user[2] . "<br>";
-}
+//$user = get_user();
+//if (!$user) echo("Authentication failed.");
+//else {
+//    echo "Last name: " . $user[0] . "<br>";
+//    echo "First name: " . $user[1] . "<br>";
+//    echo "Person code: " . $user[2] . "<br>";
+//}
 
 ?>
