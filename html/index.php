@@ -1,9 +1,9 @@
 <html>
-<head xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
     <title>Title</title>
     <meta charset="UTF-8">
-    <script src="js/facebookLogin.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="../js/facebookLogin.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
