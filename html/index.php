@@ -25,7 +25,6 @@ include "auth_controller.php";
 
 <a class="id-login-button" href="/idcard_auth"><img src="../img/idcard.gif"></a>
 
-
 <h1>Allar oli jälle siin! Päh Allar on total noob </h1>
 
 
