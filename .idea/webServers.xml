@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="42492875-9723-4d21-b85a-728202586428" name="vr_beta" url="http://ec2-52-29-136-34.eu-central-1.compute.amazonaws.com">
-        <fileTransfer host="ec2-52-29-136-34.eu-central-1.compute.amazonaws.com" port="22" privateKey="C:\Users\Erko\Desktop\allarubuntu.ppk" accessType="SFTP" username="ubuntu" keyPair="true">
+        <fileTransfer host="ec2-52-29-136-34.eu-central-1.compute.amazonaws.com" port="22" privateKey="$USER_HOME$/Dropbox/Kool (jagatud)/Võrgurakendused II/allarubuntu.pem" accessType="SFTP" username="ubuntu" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

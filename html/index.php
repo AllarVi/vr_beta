@@ -17,7 +17,7 @@
 
 </div>
 
-<h1>Allar oli jälle siin!</h1>
+<h1>Allar oli jälle siin! Pähh</h1>
 
 <div id="status">
 </div>
