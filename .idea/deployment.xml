@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="PublishConfigData" serverName="vr_beta" uploadOnCheckin="42492875-9723-4d21-b85a-728202586428">
-    <serverData>
-      <paths name="vr_beta">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/var/www" local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-    </serverData>
     <option name="myUploadOnCheckinName" value="vr_beta" />
   </component>
 </project>
