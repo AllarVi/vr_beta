@@ -59,6 +59,10 @@ window.fbAsyncInit = function() {
         statusChangeCallback(response);
     });
 
+    FB.logout(function (response) {
+        // Person is now logged out
+    });
+
 };
 
 // Load the SDK asynchronously

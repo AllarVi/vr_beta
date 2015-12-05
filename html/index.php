@@ -1,8 +1,7 @@
 <?php
 include "auth_controller.php";
 ?>
-
-<html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
     <title>Title</title>
     <meta charset="UTF-8">
@@ -21,6 +20,8 @@ include "auth_controller.php";
 
 </div>
 
+<fb:login-button autologoutlink="true" scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
 
 <a class="id-login-button" href="/idcard_auth"><img src="../img/idcard.gif"></a>
 
