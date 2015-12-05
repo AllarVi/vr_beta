@@ -1,4 +1,4 @@
-<html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
     <title>Title</title>
     <meta charset="UTF-8">
@@ -13,10 +13,10 @@
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
-<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false">
 
-</div>
 
+<fb:login-button autologoutlink="true" scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
 
 <a class="id-login-button" href="/idcard_auth"><img src="../img/idcard.gif"></a>
 
