@@ -1,3 +1,7 @@
+<?php
+include "auth_controller.php";
+?>
+
 <html>
 <head>
     <title>Title</title>
