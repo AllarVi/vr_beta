@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" uploadOnCheckin="42492875-9723-4d21-b85a-728202586428">
+  <component name="PublishConfigData" autoUpload="Always" serverName="vr_beta" uploadOnCheckin="42492875-9723-4d21-b85a-728202586428">
     <serverData>
       <paths name="vr_beta">
         <serverdata>
@@ -11,5 +11,6 @@
       </paths>
     </serverData>
     <option name="myUploadOnCheckinName" value="vr_beta" />
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
