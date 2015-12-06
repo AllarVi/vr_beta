@@ -7,11 +7,10 @@
  */
 // Holds data like $baseUrl etc.
 include "config.php";
-include "id_card_utils.php";
+//include "id_card_utils.php";
 
 $requestUrl = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-//$baseUrl = url();
-echo $baseUrl;
+$baseUrl = url();
 $requestString = substr($requestUrl, strlen($baseUrl));
 
 $urlParams = explode('/', $requestString);

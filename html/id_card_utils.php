@@ -62,5 +62,3 @@ function certstr2utf8($str)
 //    echo "First name: " . $user[1] . "<br>";
 //    echo "Person code: " . $user[2] . "<br>";
 //}
-
-?>

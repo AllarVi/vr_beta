@@ -6,6 +6,7 @@
         <serverdata>
           <mappings>
             <mapping deploy="/var/www" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/var/www/html" local="$PROJECT_DIR$/html" web="/" />
           </mappings>
         </serverdata>
       </paths>
