@@ -16,8 +16,8 @@ include "config.php";
 <head>
     <title>Title</title>
     <meta charset="UTF-8">
-    <script src="../js/facebookLogin.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="../js/fblogintest.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/test.css">
 </head>
 
 <body>
@@ -27,16 +27,25 @@ include "config.php";
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
-<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false">
+
+<div class="wrapper">
+    <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false"
+         data-auto-logout-link="true">
+    </div>
+
+
+    <!--<fb:login-button autologoutlink="true" scope="public_profile,email" onlogin="checkLoginState();">-->
+    <!--</fb:login-button>-->
+
+    <a class="id-login-button" href="idcard_auth.php?action=auth"><img src="../img/idcard.gif"></a>
+
+    <div id="status">
+    </div>
 </div>
 
-<!--<fb:login-button autologoutlink="true" scope="public_profile,email" onlogin="checkLoginState();">-->
-<!--</fb:login-button>-->
 
-<a class="id-login-button" href="idcard_auth.php?action=auth"><img src="../img/idcard.gif"></a>
+<div id="allar-on-noob"></div>
 
-<div id="status">
-</div>
 
 </body>
 </html>
