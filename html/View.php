@@ -8,17 +8,25 @@
  */
 class View
 {
-    private $model;
+    private $user;
     private $controller;
 
-    public function __construct($controller, $model)
+    public function __construct($controller, $user)
     {
         $this->controller = $controller;
-        $this->model = $model;
+        $this->user = $user;
     }
 
     public function output()
     {
-        return '<a href="index.php?action=clicked">' . $this->model->string . "</a>";
+        return '<a href="index.php?action=clicked">' . $this->user->string . "</a>";
+    }
+
+    public function outputEPersonData()
+    {
+
+        return "<p>Eesnimi: " . $this->user->firstName . "</p>" .
+        "<p>Perekonnanimi: " . $this->user->lastName . "</p>" .
+        "<p>Isikukood: " . $this->user->nationalID . "</p>";
     }
 }

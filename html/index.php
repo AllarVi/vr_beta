@@ -1,17 +1,16 @@
 <?php
-//include "auth_controller.php";
 include "config.php";
-include "Model.php";
-include "Controller.php";
-include "View.php";
+//include "User.php";
+//include "Controller.php";
+//include "View.php";
 
-$model = new Model();
-$controller = new Controller($model);
-$view = new View($controller, $model);
-
-if (isset($_GET['action']) && !empty($_GET['action'])) {
-    $controller = $controller->$_GET['action']();
-}
+//$model = new Model();
+//$controller = new Controller($model);
+//$view = new View($controller, $model);
+//
+//if (isset($_GET['action']) && !empty($_GET['action'])) {
+//    $controller = $controller->$_GET['action']();
+//}
 ?>
 <html>
 <head>
@@ -31,14 +30,10 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false">
 </div>
 
-
 <!--<fb:login-button autologoutlink="true" scope="public_profile,email" onlogin="checkLoginState();">-->
 <!--</fb:login-button>-->
 
 <a class="id-login-button" href="idcard_auth.php?action=auth"><img src="../img/idcard.gif"></a>
-
-<h1>Allar oli jälle siin! Päh Allar on total noob </h1>
-
 
 <div id="status">
 </div>

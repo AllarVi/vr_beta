@@ -4,7 +4,7 @@ header("Content-Type: text/html; charset=utf-8");
 // Get user information obtained by Apache from the Estonian ID card.
 // Return list [last_name,first_name,person_code] or False if fails.
 
-function get_user()
+function getEPerson()
 {
     // get relevant environment vars set by Apache
     // SSL_CLIENT_S_DN example:
@@ -26,7 +26,6 @@ function get_user()
     if (!$ps || !$pg) return False;
     $pse = strpos($ident, ",", $ps + 1);
     $pge = strpos($ident, ",", $pg + 1);
-    $pce = strpos($ident, ",", $pc + 1);
     $res = array(substr($ident, $ps + 4, $pse - ($ps + 4)),
         substr($ident, $pg + 4, $pge - ($pg + 4)),
         substr($ident, $pc + 13, 11));
@@ -39,7 +38,6 @@ function get_user()
 function certstr2utf8($str)
 {
     $str = preg_replace("/\\\\x([0-9ABCDEF]{1,2})/e", "chr(hexdec('\\1'))", $str);
-    $result = "";
     $encoding = mb_detect_encoding($str, "ASCII, UCS2, UTF8");
     if ($encoding == "ASCII") {
         $result = mb_convert_encoding($str, "UTF-8", "ASCII");
@@ -52,13 +50,3 @@ function certstr2utf8($str)
     }
     return $result;
 }
-
-//  Actual script to run
-
-//$user = get_user();
-//if (!$user) echo("Authentication failed.");
-//else {
-//    echo "Last name: " . $user[0] . "<br>";
-//    echo "First name: " . $user[1] . "<br>";
-//    echo "Person code: " . $user[2] . "<br>";
-//}

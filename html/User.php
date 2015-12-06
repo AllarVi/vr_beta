@@ -6,13 +6,19 @@
  * Date: 6.12.15
  * Time: 11:37
  */
-class Model
+class User
 {
     public $string;
 
+    public $lastName;
+
+    public $firstName;
+
+    public $nationalID;
+
     public function __construct()
     {
-        $this->string = "MVC + PHP = Awesome, click here!";
+//        $this->string = "MVC + PHP = Awesome, click here!";
     }
 
 }
