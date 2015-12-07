@@ -16,8 +16,14 @@ include "config.php";
 <head>
     <title>Title</title>
     <meta charset="UTF-8">
-    <script src="../js/fblogintest.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/test.css">
+
+    <!-- Google sign-in APIs -->
+    <meta name="google-signin-client_id" content="754123089612-ru560a6li4tcnbtaddd1425q0c4fq4js.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="/js/googleLogin.js"></script>
+
+    <script src="/js/fblogintest.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
@@ -37,7 +43,11 @@ include "config.php";
     <!--<fb:login-button autologoutlink="true" scope="public_profile,email" onlogin="checkLoginState();">-->
     <!--</fb:login-button>-->
 
-    <a class="id-login-button" href="idcard_auth.php?action=auth"><img src="../img/idcard.gif"></a>
+    <!-- Google Sign-in button -->
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+
+    <a class="id-login-button" href="idcard_auth.php?action=auth"><img src="/img/idcard.gif"></a>
 
     <div id="status">
     </div>
