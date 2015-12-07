@@ -39,8 +39,7 @@ include "config.php";
 
     <a class="id-login-button" href="idcard_auth.php?action=auth"><img src="../img/idcard.gif"></a>
 
-    <div id="status">
-    </div>
+    <div id="status"></div>
 </div>
 
 

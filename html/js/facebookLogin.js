@@ -96,7 +96,7 @@ function testAPI() {
     //    document.getElementById('status').innerHTML =
     //        'Thanks for logging in, ' + response.name + '<br>' + 'email: ' + response.email + 'ID: ' + response.id;
     //});
-    FB.api('/me', {fields: 'name, email, birthday, hometown, education, gender, website, work'}, function (response) {
+    FB.api('/me', {fields: 'name, email, first_name, last_name, birthday, hometown, education, gender, website, work'}, function (response) {
             document.getElementById('status').innerHTML =
                 'Currently logged in Facebook user: <br>' +
                 'Name: ' + response.name + '<br>' +
