@@ -1,6 +1,12 @@
 <?php
 header("Content-Type: text/html; charset=utf-8");
 
+require_once 'vendor/autoload.php';
+
+use Parse\ParseClient;
+
+ParseClient::initialize('RbyxhPWWGadeOAWwm1LYUvnLEGd79OvyrJeHNTPS', 'VAeeRrK3hLHVR4rx9wSOoucZOsqHrwSte2O5aa5N', '7bO7EJpG7PCh2KHBTWfX8ikDUAo3Ykziabf69cBL');
+
 function url()
 {
     return sprintf(
