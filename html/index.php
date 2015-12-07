@@ -11,12 +11,12 @@ require "config.php";
 //if (isset($_GET['action']) && !empty($_GET['action'])) {
 //    $controller = $controller->$_GET['action']();
 //}
-use Parse\ParseObject;
-
+//use Parse\ParseObject;
 //
-$testObject = ParseObject::create("TestObject");
-$testObject->set("Allar", "The Fatal");
-$testObject->save();
+////
+//$testObject = ParseObject::create("TestObject");
+//$testObject->set("Allar", "The Fatal");
+//$testObject->save();
 ?>
 <html>
 <head>

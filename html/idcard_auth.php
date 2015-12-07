@@ -29,5 +29,7 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 
 <?php echo $view->outputEPersonData(); ?>
 
+<h2><?php echo $view->outputParseMessage(); ?></h2>
+
 </body>
 </html>
