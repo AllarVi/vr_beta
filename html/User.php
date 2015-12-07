@@ -16,6 +16,8 @@ class User
 
     public $nationalID;
 
+    public $parseMessage;
+
     public function __construct()
     {
 //        $this->string = "MVC + PHP = Awesome, click here!";

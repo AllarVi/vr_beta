@@ -29,4 +29,9 @@ class View
         "<p>Perekonnanimi: " . $this->user->lastName . "</p>" .
         "<p>Isikukood: " . $this->user->nationalID . "</p>";
     }
+
+    public function outputParseMessage()
+    {
+        return $this->user->parseMessage;
+    }
 }
