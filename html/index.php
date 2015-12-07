@@ -1,5 +1,5 @@
 <?php
-include "config.php";
+require "config.php";
 //include "User.php";
 //include "Controller.php";
 //include "View.php";
@@ -11,6 +11,12 @@ include "config.php";
 //if (isset($_GET['action']) && !empty($_GET['action'])) {
 //    $controller = $controller->$_GET['action']();
 //}
+use Parse\ParseObject;
+
+//
+$testObject = ParseObject::create("TestObject");
+$testObject->set("Allar", "The Fatal");
+$testObject->save();
 ?>
 <html>
 <head>
