@@ -17,6 +17,30 @@ $view = new View($controller, $user);
 if (isset($_GET['action']) && !empty($_GET['action'])) {
     $controller = $controller->$_GET['action']();
 }
+
+function authenticate()
+{
+    session_start();
+    if ($_SESSION['fingerprint'] != md5($_SERVER['HTTP_USER_AGENT'])) {
+        session_destroy();
+        echo 'die';
+        header('HTTP/1.0 401 Unauthorized');
+        exit();
+    }
+}
+
+//    function debug_to_console($data)
+//{
+//
+//    if (is_array($data))
+//        $output = "<script>console.log( 'Debug Objects: " . implode(',', $data) . "' );</script>";
+//    else
+//        $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
+//
+//    echo $output;
+//}
+
+authenticate();
 ?>
 <!DOCTYPE html>
 <html>
