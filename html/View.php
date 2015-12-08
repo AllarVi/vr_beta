@@ -25,9 +25,9 @@ class View
     public function outputEPersonData()
     {
 
-        return "<p>Eesnimi: " . $this->user->firstName . "</p>" .
-        "<p>Perekonnanimi: " . $this->user->lastName . "</p>" .
-        "<p>Isikukood: " . $this->user->nationalID . "</p>";
+        return "<p style='font-size: 1.5em;'>Eesnimi: " . $this->user->firstName . "</p>" .
+        "<p style='font-size: 1.5em;'>Perekonnanimi: " . $this->user->lastName . "</p>" .
+        "<p style='font-size: 1.5em;'>Isikukood: " . $this->user->nationalID . "</p>";
     }
 
     public function outputParseMessage()

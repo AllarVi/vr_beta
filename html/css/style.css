@@ -13,6 +13,11 @@ body {
     width: auto;
 }
 
+#status-facebook {
+    font-size: 1.5em;
+    line-height: 1.42857;
+}
+
 #allar-on-noob {
     position: fixed;
     bottom: 0px;

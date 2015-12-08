@@ -53,6 +53,8 @@ authenticate();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="google-signin-client_id"
+          content="754123089612-ru560a6li4tcnbtaddd1425q0c4fq4js.apps.googleusercontent.com">
 
     <title>Authorized</title>
 
@@ -61,6 +63,7 @@ authenticate();
 
     <!-- Custom CSS -->
     <link href="css/landing-page.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="fonts/fonts.css" rel="stylesheet" type="text/css">
@@ -85,27 +88,32 @@ authenticate();
             <div class="col-lg-12">
                 <div class="intro-message" style="padding-top: 10%">
 
-                    <h1 style="color: #9cff28"><?php echo $view->output(); ?></h1>
+
+                    <h1 style="color: #9cff28; font-size: 2.2em;"><?php echo $view->output(); ?></h1>
+                    <hr class="intro-divider" style="width: 500px">
                     <?php echo $view->outputEPersonData(); ?>
 
-                    <hr class="intro-divider">
+                    <hr class="intro-divider" style="width: 500px">
                     <ul class="list-inline intro-social-buttons">
                         <li>
-                            <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false"
+                            <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false"
                                  data-auto-logout-link="true">
                             </div>
-
-
                         </li>
                         <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-google fa-fw"></i> <span class="network-name">Google</span></a>
+                            <div class="g-signin2" data-onsuccess="onSignIn"></div>
                         </li>
                     </ul>
+                    <div id="status-facebook">
 
-                    <div id="status">
+                    </div>
+
+                    <div id="status-google">
 
                     </div>
                 </div>
+
+
             </div>
         </div>
 
@@ -122,7 +130,6 @@ authenticate();
     <div class="container">
         <div class="row">
             <div class="col-lg-5 col-sm-6">
-                <hr class="section-heading-spacer">
                 <div class="clearfix"></div>
                 <h2 class="section-heading">Kasutatud materjalid:</h2>
                 <a target="_blank" href="http://security.stackexchange.com/questions/23929/creating-secure-php-sessions">http://security.stackexchange.com/questions/23929/creating-secure-php-sessions</a>
@@ -135,14 +142,15 @@ authenticate();
 </div>
 <!-- /.content-section-a -->
 
-
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <!-- jQuery -->
 <script src="js/jquery-1.11.3.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.js"></script>
 
-<script src="/js/facebookLogin.js"></script>
+<script src="js/facebookLogin.js"></script>
+<script src="js/googleLogin.js"></script>
 
 </body>
 

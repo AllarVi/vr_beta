@@ -6,7 +6,7 @@ function onSignIn(googleUser) {
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail());
 
-    document.getElementById('status').innerHTML =
+    document.getElementById('status-google').innerHTML =
         'Name: ' + profile.getName() + '<br>'
             + 'ID: ' + profile.getId()
             + 'E-mail: ' + profile.getEmail()

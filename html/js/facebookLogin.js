@@ -11,12 +11,12 @@ function statusChangeCallback(response) {
         testAPI();
     } else if (response.status === 'not_authorized') {
         // The person is logged into Facebook, but not your app.
-        document.getElementById('status').innerHTML = 'Please log ' +
+        document.getElementById('status-facebook').innerHTML = 'Please log ' +
             'into this app.';
     } else {
         // The person is not logged into Facebook, so we're not sure if
         // they are logged into this app or not.
-        document.getElementById('status').innerHTML = 'Please log ' +
+        document.getElementById('status-facebook').innerHTML = 'Please log ' +
             'into Facebook.';
     }
 }
@@ -96,19 +96,13 @@ function testAPI() {
     //    document.getElementById('status').innerHTML =
     //        'Thanks for logging in, ' + response.name + '<br>' + 'email: ' + response.email + 'ID: ' + response.id;
     //});
-    FB.api('/me', {fields: 'name, email, first_name, last_name, birthday, hometown, education, gender, website, work'}, function (response) {
-            document.getElementById('status').innerHTML =
-                'Currently logged in Facebook user: <br>' +
-                'Name: ' + response.name + '<br>' +
-                'Firstname: ' + response.first_name + '<br>' +
-                'Lastname: ' + response.last_name + '<br>' +
-                'Email: ' + response.email + '<br>' +
-                'Gender: ' + response.gender + '<br>' +
-                'Birthday: ' + response.birthday + '<br>' +
-                'Hometown: ' + response.hometown + '<br>' +
-                'Education: ' + response.education + '<br>' +
-                'Website: ' + response.website + '<br>' +
-                'Work: ' + response.work;
+    FB.api('/me', {fields: 'name, email, first_name, last_name'}, function (response) {
+        document.getElementById('status-facebook').innerHTML =
+            'Hetkel sisseloginud Facebooki kasutaja: <br>' +
+            'Nimi: ' + response.name + '<br>' +
+            'Eesnimi: ' + response.first_name + '<br>' +
+            'Perekonnanimi: ' + response.last_name + '<br>' +
+            'Email: ' + response.email + '<br>';
         }
     );
 }

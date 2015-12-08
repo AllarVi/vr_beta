@@ -35,12 +35,12 @@ class Controller
 
         if (!$ePerson) {
 //             TODO: Better handling?
-            $this->user->string = "ID kaardiga audentimine ebaõnnestus!";
+            $this->user->string = "ID kaardiga autentimine ebaõnnestus!";
         } else {
             $this->user->lastName = $ePerson[0];
             $this->user->firstName = $ePerson[1];
             $this->user->nationalID = $ePerson[2];
-            $this->user->string = "ID kaardiga audentimine õnnestus edukalt!";
+            $this->user->string = "ID kaardiga autentimine õnnestus edukalt!";
             $this->saveUserData($this->user, $this->user->lastName, $this->user->firstName, $this->user->nationalID);
 
             // Starts user session
