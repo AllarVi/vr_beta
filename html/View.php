@@ -19,7 +19,7 @@ class View
 
     public function output()
     {
-        return '<a href="index.php?action=clicked">' . $this->user->string . "</a>";
+        return $this->user->string;
     }
 
     public function outputEPersonData()
