@@ -18,17 +18,6 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
     $controller = $controller->$_GET['action']();
 }
 
-function authenticate()
-{
-    session_start();
-    if ($_SESSION['fingerprint'] != md5($_SERVER['HTTP_USER_AGENT'])) {
-        session_destroy();
-        echo 'die';
-        header('HTTP/1.0 401 Unauthorized');
-        exit();
-    }
-}
-
 //    function debug_to_console($data)
 //{
 //
@@ -39,8 +28,6 @@ function authenticate()
 //
 //    echo $output;
 //}
-
-authenticate();
 ?>
 
 <!DOCTYPE html>

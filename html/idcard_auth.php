@@ -60,6 +60,8 @@ authenticate();
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-social.css">
+
 
     <!-- Custom CSS -->
     <link href="css/landing-page.css" rel="stylesheet">
@@ -82,6 +84,7 @@ authenticate();
 
 <!-- Header -->
 <a name="about"></a>
+
 <div class="intro-header">
     <div class="container">
         <div class="row">
@@ -96,9 +99,9 @@ authenticate();
                     <hr class="intro-divider" style="width: 500px">
                     <ul class="list-inline intro-social-buttons">
                         <li>
-                            <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false"
-                                 data-auto-logout-link="true">
-                            </div>
+                            <a class="btn btn-social-icon btn-facebook">
+                                <span class="fa fa-facebook"></span>
+                            </a>
                         </li>
                         <li>
                             <div class="g-signin2" data-onsuccess="onSignIn"></div>
@@ -132,7 +135,8 @@ authenticate();
             <div class="col-lg-5 col-sm-6">
                 <div class="clearfix"></div>
                 <h2 class="section-heading">Kasutatud materjalid:</h2>
-                <a target="_blank" href="http://security.stackexchange.com/questions/23929/creating-secure-php-sessions">http://security.stackexchange.com/questions/23929/creating-secure-php-sessions</a>
+                <a target="_blank"
+                   href="http://security.stackexchange.com/questions/23929/creating-secure-php-sessions">http://security.stackexchange.com/questions/23929/creating-secure-php-sessions</a>
             </div>
         </div>
 
@@ -151,6 +155,10 @@ authenticate();
 
 <script src="js/facebookLogin.js"></script>
 <script src="js/googleLogin.js"></script>
+
+<script>
+    FacebookLogin.initLoginButton();
+</script>
 
 </body>
 

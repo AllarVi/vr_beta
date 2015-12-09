@@ -1,3 +1,33 @@
+var FacebookLogin = {
+
+    initLoginButton: function () {
+        $('.fa.fa-facebook').click(function (e) {
+            e.preventDefault();
+
+            FB.login(function (response) {
+                if (response.authResponse) {
+                    console.log('Welcome!  Fetching your information.... ');
+                    var access_token = response.authResponse.accessToken;
+
+                    FB.api('/me', {fields: 'name, email, first_name, last_name'}, function (response) {
+                            document.getElementById('status-facebook').innerHTML =
+                                'Hetkel sisseloginud Facebooki kasutaja: <br>' +
+                                'Nimi: ' + response.name + '<br>' +
+                                'Eesnimi: ' + response.first_name + '<br>' +
+                                'Perekonnanimi: ' + response.last_name + '<br>' +
+                                'Email: ' + response.email + '<br>';
+                        }
+                    );
+                }
+                else {
+                    console.log('User cancelled login or did not fully authorize.');
+                }
+            });
+        });
+    }
+};
+
+
 // This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -25,18 +55,18 @@ function statusChangeCallback(response) {
 // Button.  See the onlogin handler attached to it in the sample
 // code below.
 function checkLoginState() {
-    FB.getLoginStatus(function(response) {
+    FB.getLoginStatus(function (response) {
         statusChangeCallback(response);
     });
 }
 
-window.fbAsyncInit = function() {
+window.fbAsyncInit = function () {
     FB.init({
-        appId      : '1002839423108383',
-        cookie     : true,  // enable cookies to allow the server to access
-                            // the session
-        xfbml      : true,  // parse social plugins on this page
-        version    : 'v2.2' // use version 2.2
+        appId: '1002839423108383',
+        cookie: true,  // enable cookies to allow the server to access
+                       // the session
+        xfbml: true,  // parse social plugins on this page
+        version: 'v2.2' // use version 2.2
     });
 
     // Now that we've initialized the JavaScript SDK, we call
@@ -51,13 +81,13 @@ window.fbAsyncInit = function() {
     //
     // These three cases are handled in the callback function.
 
-    FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-    });
+    //FB.getLoginStatus(function (response) {
+    //    statusChangeCallback(response);
+    //});
 
 };
 
-(function(d, s, id) {
+(function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s);
@@ -97,12 +127,12 @@ function testAPI() {
     //        'Thanks for logging in, ' + response.name + '<br>' + 'email: ' + response.email + 'ID: ' + response.id;
     //});
     FB.api('/me', {fields: 'name, email, first_name, last_name'}, function (response) {
-        document.getElementById('status-facebook').innerHTML =
-            'Hetkel sisseloginud Facebooki kasutaja: <br>' +
-            'Nimi: ' + response.name + '<br>' +
-            'Eesnimi: ' + response.first_name + '<br>' +
-            'Perekonnanimi: ' + response.last_name + '<br>' +
-            'Email: ' + response.email + '<br>';
+            document.getElementById('status-facebook').innerHTML =
+                'Hetkel sisseloginud Facebooki kasutaja: <br>' +
+                'Nimi: ' + response.name + '<br>' +
+                'Eesnimi: ' + response.first_name + '<br>' +
+                'Perekonnanimi: ' + response.last_name + '<br>' +
+                'Email: ' + response.email + '<br>';
         }
     );
 }
