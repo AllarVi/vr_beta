@@ -10,7 +10,9 @@
  * kasutajanime järgi saad isikukoodi ja nime.
  */
 
-// TODO: Veriy if sender is in approved api-users list.
+use Parse\ParseQuery;
+
+// TODO: Veriy if sender is in approved api-users list (Optional).
 
 // Get and parse input
 $json = file_get_contents('php://input');
@@ -23,22 +25,50 @@ if( isset( $input['method'] )) {
         case "id_to_google":
             $id = $input->data;
             // Query parse for Google username belonging to this ID
-            $returndata = 1;
+            $query = new ParseQuery("User");
+            $query->equalTo("isikukood", $id);
+            $result = $query->first();
+            if (empty($result)) {
+                $returndata = "Error: User with provided identification code was not found.";
+            } else {
+                $returndata = $result->google;
+            }
             break;
         case "id_to_facebook":
             $id = $input->data;
             // Query parse for Facebook username belonging to this ID
-            $returndata = 2;
+            $query = new ParseQuery("User");
+            $query->equalTo("isikukood", $id);
+            $result = $query->first();
+            if (empty($result)) {
+                $returndata = "Error: User with provided identification code was not found.";
+            } else {
+                $returndata = $result->facebook;
+            }
             break;
         case "facebook_to_id":
             $fb_id = $input->data;
             // Query Parse for ID belonging to this Facebook user.
-            $returndata = 3;
+            $query = new ParseQuery("User");
+            $query->equalTo("facebook", $fb_id);
+            $result = $query->first();
+            if (empty($result)) {
+                $returndata = "Error: User with provided Facebook Account was not found.";
+            } else {
+                $returndata = $result->isikukood;
+            }
             break;
         case "google_to_id":
             $google_id = $input->data;
             // Query Parse for ID belonging to this Google user.
-            $returndata = 4;
+            $query = new ParseQuery("User");
+            $query->equalTo("isikukood", $google_id);
+            $result = $query->first();
+            if (empty($result)) {
+                $returndata = "Error: User with provided Google Account was not found.";
+            } else {
+                $returndata = $result->isikukood;
+            }
             break;
         default:
             $returndata = "Incorrect method. See API manual for more information.";
