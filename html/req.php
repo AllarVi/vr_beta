@@ -78,13 +78,18 @@ if( isset( $input['method'] )) {
     $returndata = "No method set. See API manual for more information.";
 }
 
+// Page content as JSON
+$content = "{"
+ . '"method": "' . $method . '",'
+ . '"input": "' . $input->data . '",'
+ . '"result": "' . $returndata . '"'
+ . "}";
+$content_length = strlen($content);
+
 
 // Header details for return data
 header("Content-type:application/json");
+header('Content-Length: ' . $content_length);
 
-// Payload itself as JSON
-echo "{";
-echo '"method": "' . $method . '",';
-echo '"input": "' . $input->data . '",';
-echo '"result": "' . $returndata . '"';
-echo "}";
+// Page content
+echo $content;
