@@ -4,6 +4,7 @@ require "config.php";
 
 use Parse\ParseException;
 use Parse\ParseObject;
+use Parse\ParseQuery;
 
 /**
  * Created by PhpStorm.
@@ -34,7 +35,7 @@ class Controller
         $ePerson = getEPerson();
 
         if (!$ePerson) {
-//             TODO: Better handling?
+//             TODO: Better handling
             $this->user->string = "ID kaardiga autentimine ebaõnnestus!";
         } else {
             $this->user->lastName = $ePerson[0];
@@ -49,9 +50,45 @@ class Controller
         }
     }
 
+    public function sendFBDataToParse()
+    {
+        // Sets content type to json so json could be returned
+        header('Content-Type: application/json');
+
+        if (isset($_POST['user_id'])) {
+            $parseUser = $this->fetchParseUser($_POST['user_id']);
+            if (isset($_POST['email'])) {
+                $parseUser->set("FB_email", $_POST['email']);
+                $parseUser->save();
+            }
+        }
+
+        $arr = array('email' => $_POST['email'], 'user' => $_POST['user_id']);
+
+        // Sends data back to browser
+        die(json_encode($arr));
+    }
+
+    private function fetchParseUser($user_id)
+    {
+        $query = new ParseQuery("UserObject");
+        $parseUser = "UserObject";
+        try {
+            $parseUser = $query->get($user_id);
+            return $parseUser;
+            // The object was retrieved successfully.
+        } catch (ParseException $ex) {
+            // The object was not retrieved successfully.
+            // error is a ParseException with an error code and message.
+            echo 'Kõik on katki!';
+        }
+
+        return $parseUser;
+    }
+
     private function saveUserData($user, $lastName, $firstName, $nationalID)
     {
-        $userData = new ParseObject($firstName);
+        $userData = new ParseObject("UserObject");
 
         $userData->set("lastName", $lastName);
         $userData->set("firstName", $firstName);
@@ -59,7 +96,7 @@ class Controller
 
         try {
             $userData->save();
-            $user->parseMessage = 'New object created with objectId: ' . $userData->getObjectId();
+            $user->parseMessage = $userData->getObjectId();
         } catch (ParseException $ex) {
             // Execute any logic that should take place if the save fails.
             // error is a ParseException object with an error code and message.

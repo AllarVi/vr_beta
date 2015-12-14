@@ -58,6 +58,9 @@ authenticate();
 
     <title>Authorized</title>
 
+    <!-- Base URL for ajax calls -->
+    <base href="https://52.29.136.34/">
+
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-social.css">
@@ -93,6 +96,7 @@ authenticate();
 
 
                     <h1 style="color: #9cff28; font-size: 2.2em;"><?php echo $view->output(); ?></h1>
+                    <h4 id="user_id"><?php echo $view->outputParseMessage(); ?></h4>
                     <hr class="intro-divider" style="width: 500px">
                     <?php echo $view->outputEPersonData(); ?>
 
