@@ -103,12 +103,17 @@ authenticate();
                     <hr class="intro-divider" style="width: 500px">
                     <ul class="list-inline intro-social-buttons">
                         <li>
-                            <a class="btn btn-social-icon btn-facebook">
-                                <span class="fa fa-facebook"></span>
+                            <a class="btn btn-block btn-social btn-facebook">
+                                <span class="fa fa-facebook"></span> Connect with Facebook
                             </a>
                         </li>
                         <li>
                             <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                        </li>
+                        <li>
+                            <a class="btn btn-block btn-social btn-google" onclick="onSignIn">
+                                <i class="fa fa-google"></i>Connect with Google
+                            </a>
                         </li>
                     </ul>
                     <div id="status-facebook">
