@@ -42,7 +42,18 @@ class Controller
             $this->user->firstName = $ePerson[1];
             $this->user->nationalID = $ePerson[2];
             $this->user->string = "ID kaardiga autentimine õnnestus edukalt!";
-            $this->saveUserData($this->user, $this->user->lastName, $this->user->firstName, $this->user->nationalID);
+
+            // Check if UserObject already exists
+            $query = new ParseQuery("UserObject");
+            $query->equalTo("nationalID", $this->user->nationalID);
+            $count = $query->count();
+            $parseUser = $query->first();
+
+            if ($count == 1 && $parseUser->get('nationalID') == $this->user->nationalID) {
+                $this->user->parseMessage = $parseUser->getObjectId();
+            } else {
+                $this->saveUserData($this->user, $this->user->lastName, $this->user->firstName, $this->user->nationalID);
+            }
 
             // Starts user session
             $this->begin_session();
@@ -72,7 +83,7 @@ class Controller
     private function fetchParseUser($user_id)
     {
         $query = new ParseQuery("UserObject");
-        $parseUser = "UserObject";
+        $parseUser = "UserObjectDoesNotExist";
         try {
             $parseUser = $query->get($user_id);
             return $parseUser;
