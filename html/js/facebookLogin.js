@@ -1,7 +1,7 @@
 var FacebookLogin = {
 
     initLoginButton: function () {
-        $('.btn.btn-social').click(function (e) {
+        $('.btn.btn-facebook').click(function (e) {
             e.preventDefault();
 
             FB.login(function (response) {

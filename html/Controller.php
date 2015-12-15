@@ -44,6 +44,7 @@ class Controller
             $this->user->string = "ID kaardiga autentimine õnnestus edukalt!";
 
             // Check if UserObject already exists
+            // TODO: Put following code into separate function
             $query = new ParseQuery("UserObject");
             $query->equalTo("nationalID", $this->user->nationalID);
             $count = $query->count();
@@ -68,6 +69,7 @@ class Controller
 
         if (isset($_POST['user_id'])) {
             $parseUser = $this->fetchParseUser($_POST['user_id']);
+            // TODO: Check if authenticated user is the same as Facebook user
             if (isset($_POST['email'])) {
                 $parseUser->set("FB_email", $_POST['email']);
                 $parseUser->save();

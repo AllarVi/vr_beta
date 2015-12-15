@@ -79,6 +79,17 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
                     <hr class="intro-divider" style="width: 500px">
 
                     <a class="id-login-button" href="idcard_auth.php?action=auth"><img src="/img/idcard.gif"></a>
+                    <br>
+                    <br>
+                    <br>
+
+                    <h3>Otsi isikut:</h3>
+                    <hr class="intro-divider" style="width: 500px">
+                    <form class="navbar-form">
+                        <input id="searchInput" type="text" class="form-control" placeholder="Otsi...">
+                    </form>
+
+                    <h4 id="searchResult"></h4>
 
                     <ul class="list-inline intro-social-buttons">
                         <li>
@@ -126,6 +137,11 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.js"></script>
 
+<script src="js/common.js"></script>
+
+<script>
+    Search.initSearchInput();
+</script>
 </body>
 
 </html>
